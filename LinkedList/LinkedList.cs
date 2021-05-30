@@ -8,48 +8,36 @@ namespace LinkedList
 {
     class LinkedList
     {
-        public Node head; 
-       
-        public void InsertLast(int new_data)
+        internal Node head;
+        internal void Add(int data)
         {
-            Node new_node = new Node(new_data);
+            Node node = new Node(data);
             if (this.head == null)
-            {
-                this.head = new_node;
-            }
+                this.head = node;
             else
             {
-                Node lastnode = GetLastNode();
-                lastnode.next = new_node;
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
             }
-            Console.WriteLine($"Inserted into List {new_node.data}");
+
         }
-        public Node GetLastNode()
+        internal void Display()
         {
-            Node temp = this.head;
-            while (temp.next != null)
-            {
-                temp = temp.next;
-            }
-            return temp;
-        }
-        public void Display()
-        {
-            Node temp = this.head;
-            if (temp == null)
-            {
-                Console.WriteLine("Linked List Empty");
-                return;
-            }
+            if (this.head == null)
+                Console.WriteLine("The list is empty.");
             else
             {
+                Node temp = head;
                 while (temp != null)
                 {
-                    Console.WriteLine($" {temp.data} ");
+                    Console.WriteLine(temp.data);
                     temp = temp.next;
                 }
             }
-
         }
     }
 }

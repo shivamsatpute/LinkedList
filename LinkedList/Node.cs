@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
-    public class Node //node class
+    public class Node 
     {
-        public int data; // integer value store data
-        public Node next; //Public Node head; data type is Node holding the address of the next node
-        public Node(int d) // parameter constructor
+        public int data;
+        public Node next;
+        public Node(int data)
         {
-            data = d;
-            next = null;
+            this.data = data;
         }
-
     }
 }

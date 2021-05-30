@@ -10,12 +10,13 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
-            LinkedList Run = new LinkedList();
-            Run.InsertLast(56);
-            Run.InsertLast(30);
-            Run.InsertLast(70);
-            Run.Display();
-            Console.ReadLine();
+            LinkedList list = new LinkedList();
+            list.Add(56);
+            list.Add(30);
+            list.Add(70);
+            list.Display();
+           Console.ReadLine();
+
         }
     }
 }
