@@ -11,16 +11,12 @@ namespace LinkedList
         static void Main(string[] args)
         {
 
-            LinkedList list = new LinkedList();
+            SortedLinkedList list = new SortedLinkedList();
             list.Add(56);
+            list.Add(30);
+            list.Add(40);
             list.Add(70);
-            Console.WriteLine("The list before inserting 30 is : ");
-            list.Display();
-            list.InsertAtParticularPosition(3, 30);
-            Console.WriteLine("The list after inserting 30 is :  ");
-            list.Display();
-            list.RemoveLastNode();
-            Console.WriteLine("The list after removing last node is : ");
+            Console.WriteLine("The ordered list after inserting 56,30,40,70 using sorted linked list is : ");
             list.Display();
             Console.ReadLine();
 
