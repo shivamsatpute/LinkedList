@@ -5,41 +5,65 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LinkedList
-{
-    class LinkedList
-    {
-        internal Node head;
-        internal void Append(int data)
+{ 
+        class LinkedList
         {
-            Node node = new Node(data);
-            if (this.head == null)
-                this.head = node;
-            else
+            internal Node head;
+            internal void Add(int data)
             {
-                Node temp = head;
-                while (temp.next != null)
+                Node node = new Node(data);
+                if (this.head == null)
+                    this.head = node;
+                else
                 {
-                    temp = temp.next;
+                    Node temp = head;
+                    while (temp.next != null)
+                    {
+                        temp = temp.next;
+                    }
+                    temp.next = node;
                 }
-                temp.next = node;
-            }
 
-        }
-        internal void Display()
-        {
-            if (this.head == null)
-                Console.WriteLine("The list is empty.");
-            else
+            }
+            public void InsertAtParticularPosition(int position, int data)
             {
-                Node temp = head;
-                while (temp != null)
+                Node node = new Node(data);
+                if (position < 1)
+                    Console.WriteLine("Invalid Position");
+                else if (position == 1)
                 {
-                    Console.WriteLine(temp.data);
-                    temp = temp.next;
+                    node.next = head;
+                    head = node;
+                }
+                else
+                {
+                    Node temp = head;
+
+                    while (position > 2)
+                    {
+                        temp = temp.next;
+                        position--;
+                    }
+                    node.next = temp.next;
+                    temp.next = node;
+                }
+            }
+            internal void Display()
+            {
+                if (this.head == null)
+                    Console.WriteLine("The list is empty.");
+                else
+                {
+                    Node temp = head;
+                    while (temp != null)
+                    {
+                        Console.WriteLine(temp.data);
+                        temp = temp.next;
+                    }
                 }
             }
         }
-    }
+    
 }
 
 
