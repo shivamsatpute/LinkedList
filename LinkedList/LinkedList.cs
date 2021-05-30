@@ -9,7 +9,7 @@ namespace LinkedList
     class LinkedList
     {
         internal Node head;
-        internal void Add(int data)
+        public void Add(int data)
         {
             Node node = new Node(data);
             if (this.head == null)
@@ -68,6 +68,18 @@ namespace LinkedList
             }
             newNode.next = null;
             return head;
+        }
+        public bool Search(int value)
+        {
+            while (this.head != null)
+            {
+                if (this.head.data == value)
+                {
+                    return true;
+                }
+                this.head = this.head.next;
+            }
+            return false;
         }
 
         internal void Display()
